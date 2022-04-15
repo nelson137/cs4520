@@ -1,0 +1,13 @@
+#!/bin/bash
+
+BASE_URL='git@osgit.rnet.missouri.edu:os/sp21'
+
+if [ -z "$1" ]; then
+    cat >&2 <<HERE
+Usage: $0 ASSIGNMENT_NAME
+HERE
+    exit 1
+fi
+
+URL="$BASE_URL/${1}_nwewnh"
+git clone --depth 1 --config remote.upstream.url="$URL" "$URL"
